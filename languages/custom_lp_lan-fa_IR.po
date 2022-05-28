@@ -1,0 +1,67 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Custom Login page\n"
+"POT-Creation-Date: 2022-05-28 16:28+0430\n"
+"PO-Revision-Date: 2022-05-28 16:36+0430\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: fa\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.2\n"
+"X-Poedit-Basepath: ..\n"
+"Plural-Forms: nplurals=2; plural=(n==0 || n==1);\n"
+"X-Poedit-Flags-xgettext: --add-comments=translators:\n"
+"X-Poedit-WPHeader: zo-custom-login-page.php\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;"
+"_n_noop:1,2;_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: admin/admin_proccess.php:10 admin/admin_proccess.php:11
+msgid "Custom Login"
+msgstr ""
+
+#: admin/admin_proccess.php:22
+msgid "General Settings"
+msgstr "تنظیمات عمومی"
+
+#: admin/admin_proccess.php:23
+msgid "Site Key"
+msgstr "کلید سایت"
+
+#: admin/admin_proccess.php:25
+msgid "Secret Key"
+msgstr "کلید مخفی"
+
+#: admin/views/settings.php:4
+msgid "Plugin Settings"
+msgstr "تنظیمات پلاگین"
+
+#: admin/views/settings.php:7
+msgid "Main Settings"
+msgstr "تنظیمات اصلی"
+
+#: inc/functions.php:33 inc/functions.php:35
+msgid "<strong>خطا</strong>: کد کپچا را تایید کنید!"
+msgstr ""
+
+#. Plugin Name of the plugin/theme
+msgid "Custom Login page"
+msgstr "صفحه ورود شخصی سازی شده"
+
+#. Plugin URI of the plugin/theme
+#. Author URI of the plugin/theme
+msgid "https://sisoog.com/"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid "شخصی سازی صفحه ورود وردپرس"
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Zero one"
+msgstr ""
