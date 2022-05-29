@@ -14,21 +14,23 @@ function custom_lp_lan_creat_admin_menu(){
 	  function(){include(CLP_ADMIN_VIEW . 'settings.php');},
 	  'dashicons-admin-network'
   );
-
 }
 
 /* Start Options */
 add_action("admin_init", function(){
   add_settings_section('main_settings_options', __('General Settings', 'custom_lp_lan'), null, 'main_settings');
-  add_settings_field('CLP_google_site_key', __('Site Key', 'custom_lp_lan'), 'CLP_google_site_key_callback'
+  add_settings_field('CLP_google_site_key', __('Google Site Key', 'custom_lp_lan'), 'CLP_google_site_key_callback'
 	  , 'main_settings', 'main_settings_options');
-  add_settings_field('CLP_google_secret_key', __('Secret Key', 'custom_lp_lan'), 'CLP_google_secret_key_callback'
+  add_settings_field('CLP_google_secret_key', __('Google Secret Key', 'custom_lp_lan'), 'CLP_google_secret_key_callback'
+	  , 'main_settings', 'main_settings_options');
+  add_settings_field('CLP_login_page_styles', __('Login Page Styles', 'custom_lp_lan'), 'CLP_login_page_styles_callback'
 	  , 'main_settings', 'main_settings_options');
 
 
- // register settings
+  // register settings
   register_setting('main_settings_options', 'CLP_google_site_key', 'sanitize_text_field');
   register_setting('main_settings_options', 'CLP_google_secret_key', 'sanitize_text_field');
+  register_setting('main_settings_options', 'CLP_login_page_styles', 'sanitize_text_field');
 });
 
 
@@ -41,6 +43,10 @@ function CLP_google_secret_key_callback(){
   echo '<input class="ltr left-align" type="text" name="CLP_google_secret_key" id="CLP_google_secret_key"
 	value="' . get_option('CLP_google_secret_key','') . '"
 	 style="max-width: 100%;min-width: 400px" required />';
+}
+function CLP_login_page_styles_callback(){
+  echo '<textarea class="ltr left-align" name="CLP_login_page_styles" id="CLP_login_page_styles" 
+cols="100" rows="10">'.get_option('CLP_login_page_styles','').'</textarea>';
 }
 /* End Options */
 

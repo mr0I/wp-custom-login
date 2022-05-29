@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Custom Login page\n"
-"POT-Creation-Date: 2022-05-28 16:28+0430\n"
-"PO-Revision-Date: 2022-05-28 16:36+0430\n"
+"POT-Creation-Date: 2022-05-29 09:17+0430\n"
+"PO-Revision-Date: 2022-05-29 09:20+0430\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fa\n"
@@ -25,17 +25,25 @@ msgstr ""
 msgid "Custom Login"
 msgstr ""
 
-#: admin/admin_proccess.php:22
+#: admin/admin_proccess.php:21
 msgid "General Settings"
 msgstr "تنظیمات عمومی"
 
-#: admin/admin_proccess.php:23
-msgid "Site Key"
+#: admin/admin_proccess.php:22
+#, fuzzy
+#| msgid "Site Key"
+msgid "Google Site Key"
 msgstr "کلید سایت"
 
-#: admin/admin_proccess.php:25
-msgid "Secret Key"
+#: admin/admin_proccess.php:24
+#, fuzzy
+#| msgid "Secret Key"
+msgid "Google Secret Key"
 msgstr "کلید مخفی"
+
+#: admin/admin_proccess.php:26
+msgid "Login Page Styles"
+msgstr ""
 
 #: admin/views/settings.php:4
 msgid "Plugin Settings"
@@ -45,9 +53,13 @@ msgstr "تنظیمات پلاگین"
 msgid "Main Settings"
 msgstr "تنظیمات اصلی"
 
-#: inc/functions.php:33 inc/functions.php:35
-msgid "<strong>خطا</strong>: کد کپچا را تایید کنید!"
-msgstr ""
+#: inc/functions.php:34 inc/functions.php:36
+msgid "<strong>Error</strong>Please Confirm Captcha Code!"
+msgstr "<strong> خطا </strong>کد کپچا را تایید کنید!"
+
+#: inc/functions.php:45
+msgid "Invalid username or password."
+msgstr "نام کاربری یا رمز عبور اشتباه است!"
 
 #. Plugin Name of the plugin/theme
 msgid "Custom Login page"
@@ -65,3 +77,6 @@ msgstr ""
 #. Author of the plugin/theme
 msgid "Zero one"
 msgstr ""
+
+#~ msgid "Wrong Login Details."
+#~ msgstr "نام کاربری یا رمز عبور اشتباه است!"

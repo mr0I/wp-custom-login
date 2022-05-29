@@ -2,7 +2,8 @@
 
 
 add_action( 'login_enqueue_scripts', function (){
-  wp_enqueue_style ( 'clp-styles', CLP_ASSETS . 'css/styles.css' );
+  //wp_enqueue_style ( 'clp-styles', CLP_ASSETS . 'css/styles.css' );
+  ?><style type="text/css"> <?= get_option('CLP_login_page_styles') ?></style><?php
   ?><script async src="//www.google.com/recaptcha/api.js?hl=fa"></script><?php
 });
 
@@ -30,7 +31,19 @@ add_filter( 'wp_authenticate_user', function ($user, $password) {
 	$response = json_decode($response['body'], true);
 
 	if ($response['success']) return $user;
-	else return new WP_Error( 'Captcha Invalid', __('<strong>خطا</strong>: کد کپچا را تایید کنید!') );
+	else return new WP_Error( 'Captcha Invalid', __('<strong>Error</strong>Please Confirm Captcha Code!','custom_lp_lan') );
   }
-  else return new WP_Error( 'Captcha Invalid', __('<strong>خطا</strong>: کد کپچا را تایید کنید!') );
+  else return new WP_Error( 'Captcha Invalid', __('<strong>Error</strong>Please Confirm Captcha Code!','custom_lp_lan') );
 }, 10, 3 );
+
+
+
+add_filter('login_errors', function ($error) {
+  global $errors;
+  $err_codes = $errors->get_error_codes();
+  if (in_array('invalid_username', $err_codes) || in_array('incorrect_password', $err_codes)) {
+	$error = __('Invalid username or password.','custom_lp_lan');
+  }
+
+  return $error;
+},11,1);

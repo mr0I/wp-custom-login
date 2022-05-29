@@ -3,7 +3,7 @@
  * Plugin Name: Custom Login page
  * Plugin URI: https://sisoog.com/
  * Description: شخصی سازی صفحه ورود وردپرس
- * Version: 1.0
+ * Version: 1.1
  * Author: Zero one
  * Author URI: https://sisoog.com/
  * Text Domain: custom_lp_lan
