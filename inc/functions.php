@@ -20,21 +20,30 @@ add_filter( 'login_headertitle', function (){
 add_filter( 'login_display_language_dropdown', '__return_false' );
 
 add_action('login_form', function () {
-  ?><div class="g-recaptcha" data-sitekey="<?= get_option('CLP_google_site_key') ?>"></div> <?php
+  ?>
+    <div class="g-recaptcha" data-sitekey="<?= get_option('CLP_google_site_key') ?>"></div>
+    <input type="hidden" name="is_wplogin_page" value="1">
+  <?php
 });
 
 add_filter( 'wp_authenticate_user', function ($user, $password) {
-  $secretkey = get_option('CLP_google_secret_key');
 
-  if (isset($_POST['g-recaptcha-response']) && !empty($_POST['g-recaptcha-response'])) {
-	$response = wp_remote_get( 'https://www.google.com/recaptcha/api/siteverify?secret='.$secretkey.'&response=' . $_POST['g-recaptcha-response'] );
-	$response = json_decode($response['body'], true);
+  if (isset($_POST['is_wplogin_page']) ) {
+	if (isset($_POST['g-recaptcha-response']) && !empty($_POST['g-recaptcha-response'])) {
+	  $secretkey = get_option('CLP_google_secret_key');
+	  $response = wp_remote_get( 'https://www.google.com/recaptcha/api/siteverify?secret='.$secretkey.'&response=' . $_POST['g-recaptcha-response'] );
+	  $response = json_decode($response['body'], true);
 
-	if ($response['success']) return $user;
+	  if ($response['success']) return $user;
+	  else return new WP_Error( 'Captcha Invalid', __('<strong>Error</strong>Please Confirm Captcha Code!','custom_lp_lan') );
+	}
 	else return new WP_Error( 'Captcha Invalid', __('<strong>Error</strong>Please Confirm Captcha Code!','custom_lp_lan') );
+  } else {
+	return $user;
   }
-  else return new WP_Error( 'Captcha Invalid', __('<strong>Error</strong>Please Confirm Captcha Code!','custom_lp_lan') );
-}, 10, 3 );
+
+}, 10, 2 );
+
 
 
 

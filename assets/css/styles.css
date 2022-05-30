@@ -1,6 +1,6 @@
 body.login.wp-core-ui{
-    background-color: #f5f5f5;
-}
+     background-color: #f5f5f5;
+ }
 #login h1 a, .login h1 a {
     background-image: url(/wp-content/plugins/zo-custom-login-page/assets/images/site-logo.png);
     height:100px;
