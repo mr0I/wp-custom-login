@@ -39,9 +39,12 @@ add_filter( 'wp_authenticate_user', function ($user, $password) {
 	}
 	else return new WP_Error( 'Captcha Invalid', __('<strong>Error</strong>Please Confirm Captcha Code!','custom_lp_lan') );
   } else {
-	return $user;
+      if ( wp_check_password( $password, $user->user_pass, $user->ID )) {
+          return $user;
+      } else {
+		return new WP_Error( 'invalid credentials', __('<strong>Error</strong>Invalid Credentials!','custom_lp_lan') );
+      }
   }
-
 }, 10, 2 );
 
 
