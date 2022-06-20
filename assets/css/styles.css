@@ -10,5 +10,5 @@ body.login.wp-core-ui{
     padding-bottom: 10px;
 }
 .g-recaptcha{
-    margin: 0 -7% 20px -7% !important;
+    margin: 13px auto !important;
 }
